@@ -1,0 +1,165 @@
+/* ================ GOOGLE FONTS ==================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+/* =============== Variables ============= */
+/* =============== Mixins ================ */
+/*========================= Colors ======================== */
+/*==================== Fonts and Typography ====================*/
+/*===================== Margins ======================*/
+/* ======================== BASE ========================== */
+:root {
+  --app-grid-columns: auto;
+  --app-grid-rows: auto;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+}
+@media (min-width: 48rem) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-block-start: 3rem;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--normal-font-size);
+  background: #dee2e6;
+  color: #343a40;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: #212529;
+}
+
+/* ======================== APP ========================= */
+h1 {
+  font-size: var(--biggest-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+.app {
+  margin-block-start: 3rem;
+  grid-template-columns: var(--app-grid-columns);
+  grid-template-rows: var(--app-grid-rows);
+  max-width: 30rem;
+  aspect-ratio: 1;
+}
+.app .box {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container h1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  padding-inline: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 6rem;
+}
+.options button {
+  flex: 1;
+}
+@media (min-width: 48rem) {
+  .options {
+    flex: 1;
+  }
+}
+
+/*=================== Buttons =================*/
+button {
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
+  min-width: 6rem;
+  height: 2.5rem;
+  background-color: #495057;
+  color: #ced4da;
+  box-shadow: 1px 5px 5px 0px #212529;
+  transition-property: color, background-color, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+button:hover {
+  background-color: #adb5bd;
+  color: #495057;
+  outline: none;
+}
+
+button[type=button]:focus {
+  outline: none;
+}
+
+.btn-active {
+  background-color: #adb5bd;
+  color: #495057;
+}
+
+#color {
+  width: 100%;
+  border: none;
+  height: 2rem;
+}
+
+#range {
+  width: 100%;
+  margin-block-end: 4rem;
+  --webkit-appearance: none;
+  appearance: none;
+  background: #495057;
+  border-radius: 0.5rem;
+}
+#range::-moz-range-thumb, #range::-webkit-slider-thumb {
+  width: 1rem;
+  background: #adb5bd;
+  cursor: pointer;
+  border: none;
+}
+
+/*# sourceMappingURL=main.css.map */

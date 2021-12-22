@@ -1,0 +1,42 @@
+@use "global" as g;
+
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include g.mq("medium"){
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h1{
+      width: 100%;
+      text-align:center;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  padding-inline: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 6rem;
+
+  button {
+    flex: 1;
+  }
+
+  @include g.mq("medium"){
+    flex: 1;
+  }
+}
+

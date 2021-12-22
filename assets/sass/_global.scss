@@ -1,0 +1,123 @@
+/* ================ GOOGLE FONTS ==================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+
+/* =============== Variables ============= */
+
+//Breakpoints
+$breakpoints: (
+  "medium": 48rem,
+  "large": 60rem,
+);
+
+/* =============== Mixins ================ */
+
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)){
+      @content;
+    }
+  } @else {
+    @warn 'Error getting breakpoints';
+  }
+}
+
+/*========================= Colors ======================== */
+$body-color: #dee2e6;
+$title-color: #212529;
+$text-color: #343a40;
+$primary-color: #adb5bd;
+$primary-color-lighten: #ced4da;
+$secondary-color: #495057;
+
+/*==================== Fonts and Typography ====================*/
+$font-small: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+$biggest-font-size: 2rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.125rem;
+$normal-font-size: 0.938rem;
+$small-font-size: 0.813rem;
+
+$body-font: "Roboto", sans-serif;
+
+/*===================== Margins ======================*/
+$top-margin: 3rem;
+
+/* ======================== BASE ========================== */
+
+:root{
+
+  --app-grid-columns: auto;
+  --app-grid-rows: auto;
+
+  --biggest-font-size: #{$biggest-font-size};
+  --h2-font-size: #{$h2-font-size};
+  --h3-font-size: #{$h3-font-size};
+  --normal-font-size: #{$normal-font-size};
+  --small-font-size: #{$small-font-size};
+
+  // Responsive Typo
+  @media (min-width: 48rem){
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-block-start: $top-margin;
+  min-height: 100vh;
+  font-family: $body-font;
+  font-size: var(--normal-font-size);
+  background: $body-color;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-bold;
+  color: $title-color;
+}
+
+/* ======================== APP ========================= */
+
+h1 {
+  font-size: var(--biggest-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+.app{
+  margin-block-start: $top-margin;
+  grid-template-columns: var(--app-grid-columns);
+  grid-template-rows: var(--app-grid-rows);
+  max-width: 30rem;
+  aspect-ratio: 1;
+
+  .box{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  @include mq("medium"){
+  }
+}
+

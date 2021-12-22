@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch a Sketch!</title>
+
+    <!-- ================ CSS ================ -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Etch-a-Sketch</h1>
+      <div class="options">
+	<input type="color" name="color" id="color"/>
+	<button id="grayscale" type="button">Grayscale</button>
+	<button id="color-btn" type="button" class="btn-active">Color</button>
+        <button id="rgb" type="button">RGB Mode</button>
+        <button id="eraser" type="button">Eraser</button>
+	<button id="clear">Clear</button>
+        <input
+          type="range"
+          name="range"
+          id="range"
+          list="tickmarks"
+          max="64"
+          min="1"
+          value="1"
+        />
+      </div>
+
+      <h2 class="grid-title">16x16</h2>
+      <div class="grid app"></div>
+    </main>
+    <footer></footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

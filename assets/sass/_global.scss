@@ -1,7 +1,6 @@
 /* ================ GOOGLE FONTS ==================*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
-
 /* =============== Variables ============= */
 
 //Breakpoints
@@ -35,7 +34,7 @@ $font-small: 300;
 $font-regular: 400;
 $font-bold: 700;
 
-$biggest-font-size: 2rem;
+$biggest-font-size: 3rem;
 $h2-font-size: 1.25rem;
 $h3-font-size: 1.125rem;
 $normal-font-size: 0.938rem;
@@ -61,7 +60,7 @@ $top-margin: 3rem;
 
   // Responsive Typo
   @media (min-width: 48rem){
-    --biggest-font-size: 3rem;
+    --biggest-font-size: 4rem;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -79,8 +78,10 @@ $top-margin: 3rem;
 }
 
 body {
-  margin-block-start: $top-margin;
+  display: flex;
+  width: 100%;
   min-height: 100vh;
+  align-items: center;
   font-family: $body-font;
   font-size: var(--normal-font-size);
   background: $body-color;
@@ -92,6 +93,7 @@ h2,
 h3 {
   font-weight: $font-bold;
   color: $title-color;
+  text-align: center;
 }
 
 /* ======================== APP ========================= */
@@ -100,12 +102,7 @@ h1 {
   font-size: var(--biggest-font-size);
 }
 
-h2 {
-  font-size: var(--h2-font-size);
-}
-
 .app{
-  margin-block-start: $top-margin;
   grid-template-columns: var(--app-grid-columns);
   grid-template-rows: var(--app-grid-rows);
   max-width: 30rem;
@@ -118,6 +115,7 @@ h2 {
   }
 
   @include mq("medium"){
+    max-width: 35rem;
   }
 }
 

@@ -1,37 +1,42 @@
-@use 'global' as g;
+@use "global" as g;
 
 /*=================== Buttons =================*/
-button{
+button {
   font-family: inherit;
   font-weight: g.$font-bold;
   text-transform: uppercase;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   min-width: 6rem;
   height: 2.5rem;
   background-color: g.$secondary-color;
   color: g.$primary-color-lighten;
   box-shadow: 1px 5px 5px 0px g.$title-color;
   transition-property: color, background-color, transform;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in;
 
-  &:hover{
+  &:hover {
     background-color: g.$primary-color;
     color: g.$secondary-color;
+    outline: none;
+    transform: scale(1.1);
+  }
+
+  @include g.mq("medium"){
+    min-height: 3rem;
+  }
+}
+
+button[type="button"] {
+  &:focus {
     outline: none;
   }
 }
 
-button[type="button"]{
-  &:focus{
-    outline: none;
-  }
-}
-
-.btn-active{
-    background-color: g.$primary-color;
-    color: g.$secondary-color;
+.btn-active {
+  background-color: g.$primary-color;
+  color: g.$secondary-color;
 }
 
 #color {
@@ -49,7 +54,7 @@ button[type="button"]{
   border-radius: 0.5rem;
 
   &::-moz-range-thumb,
-  &::-webkit-slider-thumb{
+  &::-webkit-slider-thumb {
     width: 1rem;
     background: g.$primary-color;
     cursor: pointer;

@@ -9,7 +9,7 @@ const returnBoxes = () => {
 };
 
 const setGrid = () => {
-  const title = app.previousElementSibling;
+  const title = document.querySelector('.grid-title');
   title.innerHTML = `${gridSize.value}x${gridSize.value}`;
 
   for (let i = 0; i < gridSize.value ** 2; i++) {
@@ -52,9 +52,6 @@ const getColor = () => {
       break;
     case "eraser":
       color = "#fff";
-      break;
-    case "grayscale":
-      console.log("to do");
       break;
     default:
       return fixedColor.value;

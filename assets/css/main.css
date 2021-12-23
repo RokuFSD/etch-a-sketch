@@ -9,7 +9,7 @@
 :root {
   --app-grid-columns: auto;
   --app-grid-rows: auto;
-  --biggest-font-size: 2rem;
+  --biggest-font-size: 3rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
   --normal-font-size: 0.938rem;
@@ -17,7 +17,7 @@
 }
 @media (min-width: 48rem) {
   :root {
-    --biggest-font-size: 3rem;
+    --biggest-font-size: 4rem;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -34,8 +34,10 @@
 }
 
 body {
-  margin-block-start: 3rem;
+  display: flex;
+  width: 100%;
   min-height: 100vh;
+  align-items: center;
   font-family: "Roboto", sans-serif;
   font-size: var(--normal-font-size);
   background: #dee2e6;
@@ -47,6 +49,7 @@ h2,
 h3 {
   font-weight: 700;
   color: #212529;
+  text-align: center;
 }
 
 /* ======================== APP ========================= */
@@ -54,12 +57,7 @@ h1 {
   font-size: var(--biggest-font-size);
 }
 
-h2 {
-  font-size: var(--h2-font-size);
-}
-
 .app {
-  margin-block-start: 3rem;
   grid-template-columns: var(--app-grid-columns);
   grid-template-rows: var(--app-grid-rows);
   max-width: 30rem;
@@ -70,21 +68,39 @@ h2 {
   height: 100%;
   background-color: #fff;
 }
+@media (min-width: 48rem) {
+  .app {
+    max-width: 35rem;
+  }
+}
+
 .container {
-  max-width: 100%;
   display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+.container h1 {
+  margin-bottom: 3rem;
+}
+.container h2 {
+  width: 100%;
+  align-self: center;
 }
 @media (min-width: 48rem) {
   .container {
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   .container h1 {
     width: 100%;
     text-align: center;
+  }
+  .container h2 {
+    bottom: 0;
+    left: 10rem;
   }
 }
 
@@ -95,18 +111,21 @@ h2 {
 
 .options {
   display: flex;
+  max-width: 25rem;
   padding-inline: 2rem;
-  width: 100%;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-block-start: 6rem;
 }
 .options button {
   flex: 1;
 }
 @media (min-width: 48rem) {
   .options {
+    flex-direction: column;
+    max-width: 12rem;
+    padding: 0;
     flex: 1;
+    align-self: center;
   }
 }
 
@@ -130,6 +149,12 @@ button:hover {
   background-color: #adb5bd;
   color: #495057;
   outline: none;
+  transform: scale(1.1);
+}
+@media (min-width: 48rem) {
+  button {
+    min-height: 3rem;
+  }
 }
 
 button[type=button]:focus {

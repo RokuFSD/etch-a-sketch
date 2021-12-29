@@ -79,6 +79,8 @@ $top-margin: 3rem;
 
 body {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   min-height: 100vh;
   align-items: center;
@@ -94,6 +96,10 @@ h3 {
   font-weight: $font-bold;
   color: $title-color;
   text-align: center;
+}
+
+footer{
+  padding: 2rem 0;
 }
 
 /* ======================== APP ========================= */
